@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-2nd-app
+  namespace: 2nd-app-namespace
+spec:
+  selector:
+    app: 2nd-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort

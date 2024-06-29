@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 2nd-app-deployment
+  namespace: 2nd-app-namespace
+spec:
+  selector:
+    matchLabels:
+      app: 2nd-app
+  template:
+    metadata:
+      labels:
+        app: 2nd-app
+    spec:
+      containers:
+        - name: 2nd-app-container
+          image: my-2nd-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
