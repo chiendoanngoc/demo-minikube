@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: 1st-app-deployment
+  namespace: 1st-app-namespace
+spec:
+  selector:
+    matchLabels:
+      app: 1st-app
+  template:
+    metadata:
+      labels:
+        app: 1st-app
+    spec:
+      containers:
+        - name: 1st-app-container
+          image: my-1st-app:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
