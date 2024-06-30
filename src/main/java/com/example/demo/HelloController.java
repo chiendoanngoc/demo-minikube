@@ -17,6 +17,6 @@ public class HelloController {
         final String url = "http://service-1st-app.1st-app-namespace.svc.cluster.local/hello";
         RestTemplate restTemplate = new RestTemplate();
         String firstAppResponse = restTemplate.getForObject(url, String.class);
-        return firstAppResponse + "That is the greeting from 1st app. And I'm the 2nd app!";
+        return firstAppResponse + "\nThat is the greeting from 1st app. And I'm the 2nd app!";
     }
 }
